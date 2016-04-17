@@ -111,7 +111,7 @@ adminApp.controller('userController', function ($scope, $rootScope, Restangular,
        
         console.log("Data");
         console.log(emailData);
-        console.log(emailJsonData);
+      //  console.log(emailJsonData);
     }
 
     function onlyUnique(value, index, self) {
