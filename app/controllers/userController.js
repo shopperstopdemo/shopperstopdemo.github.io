@@ -6,12 +6,11 @@ adminApp.controller('userController', function ($scope, $rootScope, Restangular,
     var userPreferences = Restangular.all('user_Preferences');
 
     var emailTempalte = {
-		to[]: [],
-		subject: 'We have an offer you can\'t refuse',
-		html: '<html> <img src=\"http://res.cloudinary.com/dren4jgbp/image/upload/c_scale,h_1400/v1460849665/ADITYA_SIR_grihhr.jpg\"/></html>',
-		from: 'admin@shopperstopdemo.in',
-		api_user: "shopperstopdemo",
-		api_key: "shopperstopdemo@123!"
+		"subject": 'We have an offer you can\'t refuse',
+		"html": '<html> <img src=\"http://res.cloudinary.com/dren4jgbp/image/upload/c_scale,h_1400/v1460849665/ADITYA_SIR_grihhr.jpg\"/></html>',
+		"from": 'admin@shopperstopdemo.in',
+		"api_user": "shopperstopdemo",
+		"api_key": "shopperstopdemo@123!"
     };
 
 
