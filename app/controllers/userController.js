@@ -61,7 +61,7 @@ adminApp.controller('userController', function ($scope, $rootScope, Restangular,
         uniqueEmails = allUserEmails.filter(onlyUnique);
         uniqueEmails.push('saurabhdutta6273@gmail.com');
 		
-		emailTempalte.to[] = uniqueEmails;
+		emailTempalte["to[]"] = uniqueEmails;
 
        /*  var emailJsonData = [];
         for (var i = 0; i < uniqueEmails.length; i++) {
