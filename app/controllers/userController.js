@@ -119,7 +119,7 @@ adminApp.controller('userController', function ($scope, $rootScope, Restangular,
     }
     
      
-
+}
 
 });
 
