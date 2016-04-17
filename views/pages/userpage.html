@@ -1,0 +1,82 @@
+<div class="col-md-12">
+    <div class="page-header">
+        <h1 class="text-primary">User Details</h1></div>
+    <div>
+        <div class="col-md-3">
+            <h1></h1>
+            <h1></h1>
+            <img height="200" width="200" ng-src="{{user.profile_image_url}}" class="img-thumbnail img-responsive center-block" />
+        </div>
+        <div class="col-md-8">
+            <div class="page-header">
+                <h2>{{user.name}}<small class="text-lowercase pull-right">signed up using : {{user.login_type}}</small></h2></div>
+            <div class="row">
+                <div class="user-detail-icon-container">
+                    <i class="user-detail-icon fa fa-odnoklassniki text-center"></i>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="user-label">User ID</h4>
+                </div>
+                <div class="col-md-7">
+                    <h4 class="text-lowercase user-value">{{user.user_id}}</h4></div>
+            </div>
+            <div class="row">
+                <div class="user-detail-icon-container">
+                    <i class="user-detail-icon fa fa-envelope-o text-center"></i>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="user-label">Email ID</h4></div>
+                <div class="col-md-7">
+                    <h4 class="text-lowercase user-value">{{user.email}}</h4></div>
+            </div>
+            <div class="row">
+                <div class="user-detail-icon-container">
+                    <i class="user-detail-icon fa fa-mobile-phone  center-block"></i>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="user-label">Mobile Number</h4></div>
+                <div class="col-md-7">
+                    <h4 class="text-lowercase user-value">{{user.mobile_number}}</h4></div>
+            </div>
+            <div class="row">
+                <div class="user-detail-icon-container">
+                    <i class="user-detail-icon fa fa-venus-mars  text-center"></i>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="user-label">Gender</h4></div>
+                <div class="col-md-7">
+                    <h4 class="text-lowercase user-value">{{user.gender}}</h4></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="row loading-spinner" ng-hide="userPreferences != undefined">
+            <h1></h1>
+            <p class="text-center"><i class="fa fa-circle-o-notch fa-spin text-primary "></i></p>
+            <h5 class="text-primary text-center">Loadin User Preference ...</h5>
+        </div>
+
+        <div ng-show="userPreferences">
+            <div class="page-header">
+                <h2 class="text-primary">User Preference</h2>
+            </div>
+        </div>
+
+        <div ng-repeat="preference in userPreferences">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="text-primary">Preferance for <span class="text-lowercase">{{preference.preference_type}}</span></h4>
+                    </div>
+                </div>
+                <div class="row" ng-repeat="value in preference.preference_values">
+                    <div class="col-md-4 col-md-offset-1">
+                        <h5>{{value[0]}}</h5></div>
+                    <div class="col-md-7">
+                        <h5>{{value[1]}}</h5></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
