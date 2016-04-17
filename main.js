@@ -26,15 +26,8 @@ $(document).ready(function () {
 		
 		
 		var settings = {
-		  "async": true,
-		  "crossDomain": true,
 		  "url": "https://api.sendgrid.com/api/mail.send.json",
 		  "method": "POST",
-		  "headers": {
-			"cache-control": "no-cache",
-			"postman-token": "0bba31b9-315b-0bb5-cb0b-6d964e18df25",
-			"content-type": "application/x-www-form-urlencoded"
-		  },
 		  "data": {
 			"to[]": [
 			  "saurabhdutta.jk@gmail.com",
