@@ -76,7 +76,7 @@ adminApp.controller('userController', function ($scope, $rootScope, Restangular,
         
         var emailData  = JSON.stringify(emailTempalte);
         
-        //sendEmail();
+        sendEmail();
 
       /* $http.post('https://api.postmarkapp.com/email/batch', emailJsonData, {
             headers: {
@@ -95,7 +95,7 @@ adminApp.controller('userController', function ($scope, $rootScope, Restangular,
             // or server returns response with an error status.
         });
 */
-		console.log(emailTempalte);
+		/* console.log(emailTempalte);
 		$http.post('https://api.sendgrid.com/api/mail.send.json', emailTempalte, {})
 		.then(function successCallback(response) {
            console.log("heelo")
@@ -113,7 +113,7 @@ adminApp.controller('userController', function ($scope, $rootScope, Restangular,
         console.log(emailData);
       //  console.log(emailJsonData);
     }
-
+ */
     function onlyUnique(value, index, self) {
         return self.indexOf(value) === index;
     }
@@ -127,20 +127,12 @@ adminApp.controller('userController', function ($scope, $rootScope, Restangular,
  function sendEmail(){
       console.log("Here in call");
         var settings = {
-          "async": true,
-          "crossDomain": true,
-          "url": "https://api.postmarkapp.com/email/batch",
-          "method": "POST",
-          "headers": {
-            "x-postmark-server-token": "c48030f4-5f0a-4726-a5b4-cf9ff2661b49",
-            "content-type": "application/json",
-            "cache-control": "no-cache",
-            "postman-token": "a46d63d9-8442-0fee-38df-0ceaff392a63"
-          },
-          "data": "[{From: 'admin@shopperstopdemo.in', To: 'saurabhdutta.jk@gmail.com', Subject: 'We have an offer you can\\'t refuse', HtmlBody: '<html> <img src=\"http://res.cloudinary.com/dren4jgbp/image/upload/c_scale,h_1400/v1460849665/ADITYA_SIR_grihhr.jpg\"/></html>'},{From: 'admin@shopperstopdemo.in', To: 'kumaraditya13@gmail.com', Subject: 'We have an offer you can\\'t refuse', HtmlBody: '<html><body> <img src=\"http://res.cloudinary.com/dren4jgbp/image/upload/c_scale,h_1400/v1460849665/ADITYA_SIR_grihhr.jpg\"/></body></html>'}]"
-        }
+		  "url": "https://api.sendgrid.com/api/mail.send.json",
+		  "method": "POST",
+		  "data": emailTempalte
+		}
 
-        $.ajax(settings).done(function (response) {
-          console.log(response);
-        });
+		$.ajax(settings).done(function (response) {
+		  console.log(response);
+		});
     }
