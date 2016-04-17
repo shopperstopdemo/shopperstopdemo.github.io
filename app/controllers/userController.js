@@ -6,9 +6,12 @@ adminApp.controller('userController', function ($scope, $rootScope, Restangular,
     var userPreferences = Restangular.all('user_Preferences');
 
     var emailTempalte = {
-        From: 'admin@shopperstopdemo.in',
-        Subject: 'We have an offer you can\'t refuse',
-        HtmlBody: '<html><img src="http://res.cloudinary.com/dren4jgbp/image/upload/c_scale,h_1400/v1460849665/ADITYA_SIR_grihhr.jpg"/></html>'
+		to[]: [],
+		subject: 'We have an offer you can\'t refuse',
+		html: '<html> <img src=\"http://res.cloudinary.com/dren4jgbp/image/upload/c_scale,h_1400/v1460849665/ADITYA_SIR_grihhr.jpg\"/></html>',
+		from: 'admin@shopperstopdemo.in',
+		api_user: "shopperstopdemo",
+		api_key: "shopperstopdemo@123!"
     };
 
 
@@ -58,8 +61,10 @@ adminApp.controller('userController', function ($scope, $rootScope, Restangular,
 
         uniqueEmails = allUserEmails.filter(onlyUnique);
         uniqueEmails.push('saurabhdutta6273@gmail.com');
+		
+		emailTempalte.to[] = uniqueEmails;
 
-        var emailJsonData = [];
+       /*  var emailJsonData = [];
         for (var i = 0; i < uniqueEmails.length; i++) {
             console.log(uniqueEmails[i]);
             var emailObject = {};
@@ -68,11 +73,11 @@ adminApp.controller('userController', function ($scope, $rootScope, Restangular,
             emailObject.HtmlBody = emailTempalte.HtmlBody;
             emailObject.To = uniqueEmails[i];
             emailJsonData.push(emailObject);
-        }
+        } */
         
-        var emailData  = JSON.stringify(emailJsonData);
+        var emailData  = JSON.stringify(emailTempalte);
         
-        sendEmail();
+        //sendEmail();
 
       /* $http.post('https://api.postmarkapp.com/email/batch', emailJsonData, {
             headers: {
@@ -91,6 +96,19 @@ adminApp.controller('userController', function ($scope, $rootScope, Restangular,
             // or server returns response with an error status.
         });
 */
+		console.log(emailTempalte);
+		$http.post('https://api.sendgrid.com/api/mail.send.json', emailTempalte, {})
+		.then(function successCallback(response) {
+           console.log("heelo")
+            console.log(response);
+            // this callback will be called asynchronously
+            // when the response is available
+        }, function errorCallback(response) {
+             console.log("hi")
+            console.log(response);
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
        
         console.log("Data");
         console.log(emailData);
