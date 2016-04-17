@@ -9,7 +9,7 @@
 $(document).ready(function () {
     "use strict";
     $("#btnSubmit").click(function (e) {
-        var settings = {
+  /*       var settings = {
             "url": "https://api.postmarkapp.com/email/batch",
             "method": "POST",
             "headers": {
@@ -22,6 +22,34 @@ $(document).ready(function () {
 
         $.ajax(settings).done(function (response) {
             console.log(response);
-        });
+        }); */
+		
+		
+		var settings = {
+		  "async": true,
+		  "crossDomain": true,
+		  "url": "https://api.sendgrid.com/api/mail.send.json",
+		  "method": "POST",
+		  "headers": {
+			"cache-control": "no-cache",
+			"postman-token": "0bba31b9-315b-0bb5-cb0b-6d964e18df25",
+			"content-type": "application/x-www-form-urlencoded"
+		  },
+		  "data": {
+			"to[]": [
+			  "saurabhdutta.jk@gmail.com",
+			  "saurabhdutta.6273@gmail.com"
+			],
+			"subject": "Example Subject",
+			"html": "<html> <img src=\"http://res.cloudinary.com/dren4jgbp/image/upload/c_scale,h_1400/v1460849665/ADITYA_SIR_grihhr.jpg\"/></html>",
+			"from": "admin@shopperstopdemo.in",
+			"api_user": "shopperstopdemo",
+			"api_key": "shopperstopdemo@123!"
+		  }
+		}
+
+		$.ajax(settings).done(function (response) {
+		  console.log(response);
+		});
     });
 });
