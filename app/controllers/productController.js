@@ -66,9 +66,9 @@ adminApp.controller('productController', function ($scope, $rootScope, Restangul
     $scope.editProduct =function(selectedProduct){
         console.log("in edit");
         console.log( $rootScope.selectedProduct);
-        $rootScope.selectedProduct.product_name = "Gini & JonyNavy Blue Casual Dress";
+      /*   $rootScope.selectedProduct.product_name = "Gini & JonyNavy Blue Casual Dress";
         $rootScope.selectedProduct.put();
-        $rootScope.displayedProduct.product_name = $rootScope.selectedProduct.product_name;
+        $rootScope.displayedProduct.product_name = $rootScope.selectedProduct.product_name */;
     }
 
 
