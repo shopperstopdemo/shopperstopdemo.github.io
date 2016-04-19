@@ -30,10 +30,10 @@
         </tbody>
         <tfoot>
             <tr>
-                <td class="text-center" st-pagination="" st-items-by-page="5" colspan="4"></td>
+                <td st-pagination="" st-items-by-page="5" colspan="4"></td>
                 <td>
                    <button class="btn btn-block btn-primary" ng-click="sendPromotionalEmail();">
-                        <i class="fa fa-paper-plane"></i> Promotional Email <i class="fa fa-spinner fa-spin"></i>
+                        <i class="fa fa-paper-plane"></i> Promotional Email <i id="mailSpinner" class="fa fa-spinner fa-spin"></i>
                     </button>
                 </td>
             </tr>

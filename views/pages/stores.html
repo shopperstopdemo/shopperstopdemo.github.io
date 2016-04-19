@@ -1,5 +1,48 @@
-<div class="jumbotron text-center">
-    <h1>Stores Page</h1>
+<div class="container">
+    <div class="page-header">
+        <h2 class="text-primary">Stores</h2>
+    </div>
 
-    <p>{{ message }}</p>
+    <div class="row loading-spinner" ng-hide="allStores">
+        <p class="text-center"><i class="fa fa-circle-o-notch fa-spin text-primary "></i></p>
+        <h5 class="text-primary text-center">Loading Stores ...</h5>
+    </div>
+
+    <div class="col-md-11">
+        <table id="storeTable" st-table="displayedStoresCollection" st-safe-src="allStores" class="table table-striped table-condensed table-responsive" ng-show="allStores">
+            <thead>
+                <tr>
+                    <th st-sort="store_id">Store ID</th>
+                    <th st-sort="store_name">Name</th>
+                    <th st-sort="store_address">Address</th>
+                    <th st-sort="store_city">City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th colspan="4">
+                        <input st-search="" class="form-control" placeholder="search..." type="text" />
+                    </th>
+                </tr>
+                <tr ng-repeat="row in displayedStoresCollection">
+                    <td><a ng-href="#store" ng-click="setStore(row);">{{row.store_id}}</a></td>
+                    <td>{{row.store_name}}</td>
+                    <td class="col-md-5">{{row.store_address}} </td>
+                    <td>{{row.store_city}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td st-pagination="" st-items-by-page="5" st-displayed-pages="5" colspan="3"></td>
+                    <td colspan="1">
+                        <button class="btn btn-block btn-primary" ng-click="addNewStore();">
+                            <i class="fa fa-plus"></i> Add Store
+                        </button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+
 </div>

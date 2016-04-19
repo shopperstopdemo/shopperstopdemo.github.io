@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="col-md-11">
+        <div class="page-header">
+            <h1 class="text-primary">Store Details</h1></div>
+        <div class="row">
+            <div class="col-md-2">
+                <h4 class="user-label text-right">Store Name</h4></div>
+            <div class="col-md-6">
+                <h4>{{seletecteStore.store_name}}</h4></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <h4 class="user-label text-right">Store ID</h4></div>
+            <div class="col-md-6">
+                <h4>{{seletecteStore.store_id}}</h4></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <h4 class="user-label text-right">Address</h4></div>
+            <div class="col-md-6">
+                <h4>{{seletecteStore.store_address}}</h4></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <h4 class="user-label text-right">City</h4></div>
+            <div class="col-md-6">
+                <h4>{{seletecteStore.store_city}}</h4></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <h4 class="user-label text-right">Latitude </h4></div>
+            <div class="col-md-2">
+                <h4>{{seletecteStore.store_latitude | number : 6}}</h4></div>
+            <div class="col-md-2">
+                <h4 class="user-label text-right">Longitude </h4></div>
+            <div class="col-md-2">
+                <h4>{{seletecteStore.store_longitude | number : 6}}</h4></div>
+        </div>
+        <div class="row">
+            <div class="col-md-11">
+                <div role="group" class="btn-group pull-right">
+                    <button class="btn btn-primary" type="button"><i class="fa fa-edit"></i> Edit Store</button>
+                    <button class="btn btn-danger" type="button"><i class="fa fa-trash-o"></i> Delete Store</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

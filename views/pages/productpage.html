@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="col-md-11">
+        <div class="page-header">
+            <h1 class="text-primary">Product Details</h1></div>
+        <div class="row">
+            <div class="col-md-2">
+                <h4 class="text-right  user-label">Product Name</h4></div>
+            <div class="col-md-9">
+                <h4>{{displayedProduct.product_name}}</h4></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <h4 class="text-right  user-label">Product ID</h4></div>
+            <div class="col-md-9">
+                <h4>{{displayedProduct.product_id}}</h4></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <h4 class="text-right user-label">Brand</h4></div>
+            <div class="col-md-9">
+                <h4>{{displayedProduct.product_brand}}</h4></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <h4 class="text-right user-label">Price</h4></div>
+            <div class="col-md-9">
+                <h4>Rs {{displayedProduct.product_price | number:2}}</h4></div>
+        </div>
+         <div class="row">
+            <div class="col-md-2">
+                <h4 class="text-right user-label">Type</h4></div>
+            <div class="col-md-9">
+                <h4>{{displayedProduct.product_type}}</h4></div>
+        </div>
+         <div class="row">
+            <div class="col-md-2">
+                <h4 class="text-right user-label">Category</h4></div>
+            <div class="col-md-9">
+                <h4>{{displayedProduct.product_category}}</h4></div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-2">
+                <h4 class="text-right user-label">Product Image</h4></div>
+            <div class="col-md-9">
+                <div class="row" ng-hide="editMode">
+                    <div class="col-md-3" ng-repeat="image in displayedProduct.product_images">
+                        <img ng-src="{{image}}" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="row" ng-show="editMode">
+                    <div class="col-md-12">
+                        <h5>Value </h5></div>
+                    <div class="col-md-12">
+                        <h5>Value </h5></div>
+                    <div class="col-md-12">
+                        <h5>Value </h5></div>
+                </div>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col-md-2">
+                <h4 class="text-right user-label">Description</h4></div>
+            <div class="col-md-9">
+                <div class="row" ng-repeat="description in displayedProduct.descriptions">
+                    <div class="col-md-2" >
+                        <h5 class="text-muted">{{description[0]}}</h5></div>
+                    <div class="col-md-10">
+                        <h5>{{description[1]}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h1></h1>
+            <div class="col-md-12">
+                <div role="group" class="btn-group pull-right">
+                    <button class="btn btn-primary" type="button" ng-click="editProduct(selectedProduct);">Edit Product <i class="fa fa-edit"></i></button>
+                    <button class="btn btn-danger" type="button">Delete Product<i class="fa fa-trash-o"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h1 class="text-success"><small class="text-primary">Product Availability</small></h1></div>
+            </div>
+        </div>
+    </div>
+</div>

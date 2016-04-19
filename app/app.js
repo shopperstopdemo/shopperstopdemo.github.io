@@ -1,5 +1,6 @@
 
-var adminApp = angular.module('adminApp', ['ngRoute','restangular','smart-table']);
+var adminApp = angular.module('adminApp', ['ngRoute','restangular','smart-table','ui.bootstrap']);
+
 
 
  adminApp
@@ -33,22 +34,26 @@ var adminApp = angular.module('adminApp', ['ngRoute','restangular','smart-table'
                 templateUrl : '../views/pages/userpage.html',
                 controller  : 'userController'
             })
-        
-            // route for the promotions page
-            .when('/promotions', {
-                templateUrl : '../views/pages/promotions.html',
-                controller  : 'promotionController'
-            })
-        
+
             // route for the products page
             .when('/products', {
                 templateUrl : '../views/pages/products.html',
+                controller  : 'productController'
+            })
+        
+            .when('/product', {
+                templateUrl : '../views/pages/productpage.html',
                 controller  : 'productController'
             })
 
             // route for the stores page
             .when('/stores', {
                 templateUrl : '../views/pages/stores.html',
+                controller  : 'storeController'
+            })
+            
+            .when('/store',{
+                templateUrl : '../views/pages/storepage.html',
                 controller  : 'storeController'
             });
      

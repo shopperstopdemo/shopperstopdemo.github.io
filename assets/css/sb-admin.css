@@ -348,3 +348,20 @@ td{
 .fa.fa-circle-o-notch.fa-spin{
     font-size: 60px;
 }
+
+#mailSpinner{
+    visibility: hidden;
+}
+
+
+#slides_control > div{
+  height: 200px;
+    background-color: aquamarine;
+}
+#slides_control {
+  position:absolute;
+  width: 400px;
+  left:50%;
+  top:00px;
+ margin-left:-200px;
+}
